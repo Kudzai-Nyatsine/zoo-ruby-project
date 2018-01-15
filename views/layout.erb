@@ -8,9 +8,8 @@
   <title><%= @title %></title>
 </head>
 <body>
-	
-<%= erb(:'partials/navigation',:layout => false) %>
-<%= yield %>
-<script src="<%= url('/js/app.js') %>"></script>	
+	<%= erb(:'partials/navigation',:layout => false) %>
+	<%= yield %>
+	<script src="<%= url('/js/app.js') %>"></script>	
 </body>
 </html>
