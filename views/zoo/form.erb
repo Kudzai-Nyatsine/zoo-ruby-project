@@ -1,0 +1,27 @@
+<form action="/<%= @zoo.id %>" method ="POST">
+	<div>
+		<label>Title</label>
+		<input type="text" name="title" placeholder="Enter your title" value="<%= @zoo.title %>">
+	</div>
+	<div>
+		<label>Sea Animal </label>
+		<input type="text" name="sea" placeholder="Enter sea animal" value="<%= @zoo.sea %>">
+	</div>
+	<div>
+		<label>Forest Animal </label>
+		<input type="text" name="forest" placeholder="Enter Forest animal" value="<%= @zoo.forest %>">
+	</div>
+	<div>
+		<label>Safari Animal </label>
+		<input type="text" name="safari" placeholder="Enter Safari animal" value="<%= @zoo.safari %>">
+	</div>
+	<div>
+		<label>Mountains Animal </label>
+		<input type="text" name="mountains" placeholder="Enter sea animal" value="<%= @zoo.mountains %>">
+	</div>
+    <input type="submit" value="Save Post">
+  </div>
+  <% if(@zoo.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>

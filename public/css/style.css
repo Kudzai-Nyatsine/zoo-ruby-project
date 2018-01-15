@@ -1,0 +1,27 @@
+
+body {
+	background-image: url('../images/safari.jpeg');
+}
+
+nav a {
+	text-decoration: none;
+	font-size: 2em;
+	padding: 60px;
+	color: #fff;
+}
+
+nav a:hover{
+	color:red;
+}
+
+nav {
+	border: 4px solid black;
+	background-color: grey;
+}
+
+input {
+	width: 50%;
+	margin-bottom: 40px;
+	margin-left: 15px;
+	height: 20px;
+}

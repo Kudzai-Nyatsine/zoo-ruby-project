@@ -1,0 +1,12 @@
+<h1><%= @zoo.title %></h1>
+<p><%= @zoo.sea %></p>
+<p><%= @zoo.forest %></p>
+<p><%= @zoo.safari %></p>
+<p><%= @zoo.mountains %></p>
+
+<a href="/<%= @zoo.id %>/edit">Edit</a>
+<form action="/<%= @zoo.id %>" method = "POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="submit" value="Delete">
+	
+</form>

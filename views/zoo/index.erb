@@ -1,0 +1,12 @@
+<h1>Kudzai's Jungle Zoo</h1>
+
+<% @zoo.each do |animal| %>
+	<div>
+		<h2><a href="/<%= animal.id %>"><%= animal.title %></a></h2>
+		<p><%= animal.sea %></p>
+		<p><%= animal.forest %></p>
+		<p><%= animal.safari %></p>
+		<p><%= animal.mountains %></p>
+	</div>
+<% end %>
+
