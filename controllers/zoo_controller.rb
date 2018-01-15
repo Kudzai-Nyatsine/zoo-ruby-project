@@ -11,66 +11,60 @@ class ZooController < Sinatra::Base
   end
 
 # INDEX
-  get '/' do
-  	@title = "Kudz Zoo"
-  	@zoo = Zoo.all
-
-  	erb :'zoo/index'
-  end
+  	get '/' do
+  		@title = "Kudz Zoo"
+  		@zoo = Zoo.all
+  		erb :'zoo/index'
+  	end
 # NEW
-  get '/new' do
-  	@zoo = Zoo.new
-  	erb :'zoo/new'
-
-  end
+  	get '/new' do
+  		@zoo = Zoo.new
+  		erb :'zoo/new'
+  	end
 # SHOW
-  get '/:id' do
-  	id = params[:id].to_i
-  	@zoo = Zoo.find id
-  	erb :'zoo/show'
-  end
+  	get '/:id' do
+  		id = params[:id].to_i
+  		@zoo = Zoo.find id
+  		erb :'zoo/show'
+  	end
 
-  post '/' do
-  	zoo = Zoo.new
-  	zoo.title = params[:title]
-  	zoo.sea = params[:sea]
-  	zoo.forest = params[:forest]
-  	zoo.safari = params[:safari]
-  	zoo.mountains = params[:mountains]
+  	post '/' do
+  		zoo = Zoo.new
+  		zoo.title = params[:title]
+  		zoo.sea = params[:sea]
+  		zoo.forest = params[:forest]
+  		zoo.safari = params[:safari]
+  		zoo.mountains = params[:mountains]
 
+  		zoo.save
 
-  	zoo.save
+  		redirect "/"
+  	end
 
-  	redirect "/"
+  	put '/:id' do
+  		id = params[:id].to_i
+  		zoo = Zoo.find id
+  		zoo.title = params[:title]
+  		zoo.sea = params[:sea]
+  		zoo.forest = params[:forest]
+  		zoo.safari = params[:safari]
+  		zoo.mountains = params[:mountains]
 
-  end
+  		zoo.save
 
-  put '/:id' do
-  	id = params[:id].to_i
-  	zoo = Zoo.find id
-  	zoo.title = params[:title]
-  	zoo.sea = params[:sea]
-  	zoo.forest = params[:forest]
-  	zoo.safari = params[:safari]
-  	zoo.mountains = params[:mountains]
-
-  	zoo.save
-
-  	redirect "/";
-  end
+  		redirect "/";
+  	end
 
 	delete '/:id' do
-	id = params[:id].to_i
-	Zoo.destroy id
-
-	redirect "/"
+		id = params[:id].to_i
+		Zoo.destroy id
+		redirect "/"
 	end
 
 	get '/:id/edit' do
-	id = params[:id].to_i
-
-	@zoo = Zoo.find id
-	erb :'zoo/edit'
+		id = params[:id].to_i
+		@zoo = Zoo.find id
+		erb :'zoo/edit'
 	end
 end
 

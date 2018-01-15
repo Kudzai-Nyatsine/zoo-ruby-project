@@ -7,10 +7,9 @@
   crossorigin="anonymous"></script>
   <title><%= @title %></title>
 </head>
-<body>
-	
-<%= erb(:'partials/navigation',:layout => false) %>
-<%= yield %>
+<body>	
+	<%= erb(:'partials/navigation',:layout => false) %>
+	<%= yield %>
 <script src="<%= url('/js/app.js') %>"></script>	
 </body>
 </html>
